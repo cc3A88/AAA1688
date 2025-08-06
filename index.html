@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>百家樂 AI 預測系統</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <h2>百家樂 AI 預測系統</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">歷史記錄</div>
+        <div id="history" class="card-content">—</div>
+      </div>
+      <div class="card">
+        <div class="card-title">下一局預測機率</div>
+        <ul id="prediction" class="card-content">
+          <li>莊家 (B)：<span id="prob-B">—</span>%</li>
+          <li>閒家 (P)：<span id="prob-P">—</span>%</li>
+          <li>和局 (T)：<span id="prob-T">—</span>%</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">模式偵測</div>
+        <ul id="patterns" class="card-content">
+          <li>單跳：<span id="pattern-single">—</span></li>
+          <li>雙跳：<span id="pattern-double">—</span></li>
+          <li>一房兩廳：<span id="pattern-one-two">—</span></li>
+          <li>長龍：<span id="pattern-dragon">—</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">下注建議</div>
+        <div id="suggestion" class="card-content">—</div>
+      </div>
+    </div>
+    <div class="road-charts">
+      <canvas id="canvas-bigRoad" width="360" height="80"></canvas>
+      <canvas id="canvas-bigEye" width="360" height="60"></canvas>
+      <canvas id="canvas-smallRoad" width="360" height="60"></canvas>
+      <canvas id="canvas-cockroach" width="360" height="60"></canvas>
+    </div>
+    <div class="button-grid">
+      <button id="btn-B" class="neon-btn">莊家</button>
+      <button id="btn-P" class="neon-btn">閒家</button>
+      <button id="btn-T" class="neon-btn">和局</button>
+      <button id="btn-undo" class="neon-btn mini">返回</button>
+      <button id="btn-reset" class="neon-btn mini">重置</button>
+    </div>
+  </div>
+</body>
+</html>
