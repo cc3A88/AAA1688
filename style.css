@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+:root {
+  --bg: #0b0c10;
+  --card-bg: rgba(16,20,28,0.8);
+  --neon: #00ffe7;
+  --neon-glow: rgba(0,255,231,0.6);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--neon);
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 360px;
+  padding: 20px;
+  background: linear-gradient(135deg, #121618 0%, #1f262e 100%);
+  border: 1px solid var(--neon);
+  border-radius: 12px;
+  box-shadow: 0 0 20px var(--neon-glow);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--neon);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 0 8px var(--neon-glow);
+}
+
+.card-title {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.card-content {
+  font-size: 1rem;
+}
+
+.card-content ul {
+  list-style: none;
+}
+
+.card-content li {
+  margin: 4px 0;
+}
+
+.road-charts canvas {
+  display: block;
+  margin: 8px auto;
+  background: var(--card-bg);
+  border: 1px solid var(--neon);
+  border-radius: 8px;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.neon-btn {
+  background: transparent;
+  border: 2px solid var(--neon);
+  color: var(--neon);
+  padding: 10px 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.neon-btn::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--neon-glow);
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.neon-btn:hover::before {
+  opacity: 1;
+}
+
+.neon-btn:hover {
+  color: var(--bg);
+  background: var(--neon);
+}
+
+.neon-btn.mini {
+  font-size: 0.85rem;
+  padding: 8px 0;
+}
